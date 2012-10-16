@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cavy &mdash; cavy 0.1a documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="cavy 0.1a documentation" href="#" />
+    <link rel="next" title="README" href="includereadme.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="includereadme.html" title="README"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">cavy 0.1a documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cavy">
+<h1>Cavy<a class="headerlink" href="#cavy" title="Permalink to this headline">¶</a></h1>
+<p>Flask project skeleton for <strong>Google App Engine</strong> development. Include <tt class="docutils literal"><span class="pre">fabric</span></tt>
+script for easy generation JS scripts from <tt class="docutils literal"><span class="pre">.coffee</span></tt> files, CSS styles from
+<tt class="docutils literal"><span class="pre">.less</span></tt> files and JS file compression. <strong>Twitter Bootstrap</strong> also included
+as default style with <tt class="docutils literal"><span class="pre">.less</span></tt> sources.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Need <tt class="docutils literal"><span class="pre">Fabric</span></tt> installed for work.</p>
+</div>
+<p>Is based on original <a class="reference external" href="https://github.com/kamalgill/flask-appengine-template">flask-appengine-template</a>
+and have similar licenses.</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="includereadme.html">README</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+<div class="section" id="module-fabfile">
+<span id="project-management-fabfile"></span><h2>Project management &#8211; <a class="reference internal" href="#module-fabfile" title="fabfile"><tt class="xref py py-mod docutils literal"><span class="pre">fabfile</span></tt></a><a class="headerlink" href="#module-fabfile" title="Permalink to this headline">¶</a></h2>
+<p>Cavy management script.</p>
+<p>Run as:</p>
+<div class="highlight-python"><pre>fab build|compile_less|compile_coffee|uglify_js</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">build</span></tt> make <tt class="docutils literal"><span class="pre">compile_less:True</span></tt>, <tt class="docutils literal"><span class="pre">compile_coffee:False</span></tt> and <tt class="docutils literal"><span class="pre">uglify</span></tt>.</p>
+<p>See API for details.</p>
+<div class="section" id="api-fabfile">
+<h3>API &#8211; <a class="reference internal" href="#module-fabfile" title="fabfile"><tt class="xref py py-mod docutils literal"><span class="pre">fabfile</span></tt></a><a class="headerlink" href="#api-fabfile" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="fabfile.build">
+<tt class="descclassname">fabfile.</tt><tt class="descname">build</tt><big>(</big><em>indy_less=True</em>, <em>join_js=False</em><big>)</big><a class="headerlink" href="#fabfile.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build less, coffee, make uglify, etc.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>indy_less</strong> &#8211; make individual styles in blueprints;</li>
+<li><strong>join_js</strong> &#8211; join all compiled js in single file fo each blueprint.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabfile.compile_coffee">
+<tt class="descclassname">fabfile.</tt><tt class="descname">compile_coffee</tt><big>(</big><em>join=False</em><big>)</big><a class="headerlink" href="#fabfile.compile_coffee" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile JS scrypts from .coffee files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">need <tt class="docutils literal"><span class="pre">node.js</span></tt> for work.</p>
+</div>
+<p>Search <tt class="docutils literal"><span class="pre">static/coffee</span></tt> dirs in <tt class="docutils literal"><span class="pre">cavy</span></tt> app and in ENABLED_BLUEPRINTS for
+<tt class="docutils literal"><span class="pre">*.coffee</span></tt> files and compile it into <tt class="docutils literal"><span class="pre">static/js</span></tt> dir.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>join</strong> &#8211; if <tt class="docutils literal"><span class="pre">True</span></tt> - all <tt class="docutils literal"><span class="pre">*.coffee</span></tt> files joined into single
+<tt class="docutils literal"><span class="pre">static/js/blueprint_app_name.js</span></tt> file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabfile.compile_less">
+<tt class="descclassname">fabfile.</tt><tt class="descname">compile_less</tt><big>(</big><em>indy=True</em><big>)</big><a class="headerlink" href="#fabfile.compile_less" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile CSS styles from <tt class="docutils literal"><span class="pre">.less</span></tt> files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">need <tt class="docutils literal"><span class="pre">node.js</span></tt> for work.</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">.less</span></tt> files placed in <tt class="docutils literal"><span class="pre">project/cavy/static/less</span></tt> and named
+<tt class="docutils literal"><span class="pre">style.less</span></tt> or <tt class="docutils literal"><span class="pre">*-style.less</span></tt>. It&#8217;ll be compiled in
+<tt class="docutils literal"><span class="pre">project/cavy/static/css/(style.css|*-style.css)</span></tt> and
+you can import your styles there from blueprint&#8217;s <tt class="docutils literal"><span class="pre">static/less</span></tt>.
+Folders from <tt class="docutils literal"><span class="pre">ENABLED_BLUEPRINTS</span></tt> is registered in <tt class="docutils literal"><span class="pre">lessc</span></tt> as paths for
+import.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>indy</strong> &#8211; Also you can make independent styles in your
+blueprints. If compiler find <tt class="docutils literal"><span class="pre">style.less</span></tt> or <tt class="docutils literal"><span class="pre">*-style.less</span></tt> files
+in blueprint&#8217;s <tt class="docutils literal"><span class="pre">static/less</span></tt> folder it compile independent style
+file in blueprint&#8217;s
+<tt class="docutils literal"><span class="pre">static/css/(style.css|*-style.css)</span></tt> and you can separate include it
+into HTML. Other blueprint&#8217;s <tt class="docutils literal"><span class="pre">static/less</span></tt> folders isn&#8217;t registered in
+<tt class="docutils literal"><span class="pre">lessc</span></tt> as paths for import in this case.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabfile.runserver">
+<tt class="descclassname">fabfile.</tt><tt class="descname">runserver</tt><big>(</big><em>args=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#fabfile.runserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run GAE SDK server.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabfile.uglify_js">
+<tt class="descclassname">fabfile.</tt><tt class="descname">uglify_js</tt><big>(</big><big>)</big><a class="headerlink" href="#fabfile.uglify_js" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minificate JS files.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">need <tt class="docutils literal"><span class="pre">node.js</span></tt> for work.</p>
+</div>
+<p>Search <tt class="docutils literal"><span class="pre">static/js</span></tt> dirs in <tt class="docutils literal"><span class="pre">cavy</span></tt> app and in <tt class="docutils literal"><span class="pre">ENABLED_BLUEPRINTS</span></tt> for
+<tt class="docutils literal"><span class="pre">*.js</span></tt> files and minificate it into <tt class="docutils literal"><span class="pre">static/js</span></tt> dir with
+<tt class="docutils literal"><span class="pre">original_basename.min.js</span></tt> names.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-project.cavy.settings">
+<span id="settings-cavy-settings"></span><h2>Settings &#8211; <tt class="xref py py-mod docutils literal"><span class="pre">cavy.settings</span></tt><a class="headerlink" href="#module-project.cavy.settings" title="Permalink to this headline">¶</a></h2>
+<p>Configuration for Flask app</p>
+<dl class="docutils">
+<dt>Important: Place your keys in the secret_keys.py module,</dt>
+<dd>which should be kept out of version control.</dd>
+</dl>
+<dl class="data">
+<dt id="project.cavy.settings.ENABLED_BLUEPRINTS">
+<tt class="descclassname">project.cavy.settings.</tt><tt class="descname">ENABLED_BLUEPRINTS</tt><em class="property"> = ()</em><a class="headerlink" href="#project.cavy.settings.ENABLED_BLUEPRINTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blueprints that automatically will be registered into flask.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/cavy_doc.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cavy</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a><ul>
+<li><a class="reference internal" href="#module-fabfile">Project management &#8211; <tt class="docutils literal"><span class="pre">fabfile</span></tt></a><ul>
+<li><a class="reference internal" href="#api-fabfile">API &#8211; <tt class="docutils literal"><span class="pre">fabfile</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-project.cavy.settings">Settings &#8211; <tt class="docutils literal"><span class="pre">cavy.settings</span></tt></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="includereadme.html"
+                        title="next chapter">README</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="includereadme.html" title="README"
+             >next</a> |</li>
+        <li><a href="#">cavy 0.1a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, qnub.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
