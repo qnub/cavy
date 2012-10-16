@@ -18,10 +18,11 @@ Indices and tables
    :maxdepth: 2
 
    includereadme
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+* `GitHub Project <http://github.com/qnub/cavy>`_
 
 Project management -- :mod:`fabfile`
 ------------------------------------
