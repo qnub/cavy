@@ -1,6 +1,8 @@
 Cavy
 ====
 
+`GitHub <http://github.com/qnub/cavy>`_
+
 Flask project skeleton for **Google App Engine** development. Include ``fabric``
 script for easy generation JS scripts from ``.coffee`` files, CSS styles from
 ``.less`` files and JS file compression. **Twitter Bootstrap** also included
